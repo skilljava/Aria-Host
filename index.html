@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آریاهاست | AriaHost</title>
+    <!-- Vazirmatn Font for Persian -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DotLottie Player for .lottie files -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Vazirmatn', 'sans-serif'],
+            },
+            colors: {
+              primary: '#f59e0b', // Amber 500
+              secondary: '#ea580c', // Orange 600
+              dark: {
+                900: '#0f172a', // Slate 900
+                800: '#1e293b', // Slate 800
+                700: '#334155', // Slate 700
+              }
+            },
+            keyframes: {
+                'gradient-xy': {
+                    '0%, 100%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'left center'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center'
+                    }
+                },
+                'shimmer': {
+                  '0%': { backgroundPosition: '-1000px 0' },
+                  '100%': { backgroundPosition: '1000px 0' }
+                }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'gradient-xy': 'gradient-xy 15s ease infinite',
+              'shimmer': 'shimmer 2.5s linear infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #0f172a;
+        color: #f1f5f9;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 5px;
+        border: 2px solid #020617;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f59e0b; 
+      }
+      .cursor-dot,
+      .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #f59e0b;
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(245, 158, 11, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+      }
+      /* Enhance logo visibility */
+      .aria-logo {
+        filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+      }
+      
+      /* Super Glow Text Effect (Increased Intensity) */
+      .text-glow {
+        text-shadow: 0 0 30px rgba(249, 115, 22, 0.8), 0 0 60px rgba(249, 115, 22, 0.5), 0 0 90px rgba(249, 115, 22, 0.3);
+      }
+      .text-glow-white {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.4);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "gsap/": "https://esm.sh/gsap@3.12.5/",
+    "@gsap/react": "https://esm.sh/@gsap/react@2.1.0?external=react,gsap",
+    "lottie-react": "https://esm.sh/lottie-react@2.4.0?external=react",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
